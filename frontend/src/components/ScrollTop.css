@@ -1,0 +1,26 @@
+.scroll-top-btn {
+  position: fixed;
+  right: 28px;
+  bottom: 22px;
+  z-index: 35;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--bg-elevated), var(--bg-elevated)) padding-box,
+    var(--border-gradient) border-box;
+  box-shadow: var(--shadow);
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+@media (max-width: 640px) {
+  .scroll-top-btn {
+    right: 16px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+  }
+}

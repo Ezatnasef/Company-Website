@@ -1,0 +1,102 @@
+﻿.about-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.about-copy,
+.about-stats {
+  padding: 32px;
+  border-radius: 32px;
+  background: var(--showcase-shell-bg);
+  border: 1px solid var(--showcase-shell-border);
+  box-shadow: var(--shadow);
+  color: var(--showcase-title);
+  transition: background 240ms ease, border-color 240ms ease, color 240ms ease;
+}
+
+.about-copy {
+  display: grid;
+  gap: 18px;
+}
+
+.about-copy h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  color: var(--showcase-title);
+}
+
+.about-copy p {
+  color: var(--showcase-copy);
+  font-size: 1.06rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.about-stat-card {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  align-content: center;
+  min-height: 170px;
+  padding: 24px;
+  border-radius: 26px;
+  background:
+    linear-gradient(var(--showcase-card-bg), var(--showcase-card-bg)) padding-box,
+    var(--border-gradient) border-box;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.about-stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, var(--showcase-sweep-cyan) 50%, transparent 60%);
+  transform: translateX(-100%);
+  animation: stats-sweep 9s linear infinite;
+  pointer-events: none;
+}
+
+.about-stat-card strong {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  color: var(--showcase-title);
+}
+
+.about-stat-card span {
+  color: var(--showcase-copy);
+  font-weight: 700;
+}
+
+@keyframes stats-sweep {
+  0% { transform: translateX(-100%); opacity: 0; }
+  18% { opacity: 1; }
+  82% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@media (max-width: 960px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-copy,
+  .about-stats {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+}

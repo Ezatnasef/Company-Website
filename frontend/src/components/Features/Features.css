@@ -1,0 +1,195 @@
+﻿.features-section {
+  position: relative;
+  color: var(--showcase-title);
+  background:
+    linear-gradient(var(--showcase-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--showcase-grid) 1px, transparent 1px),
+    var(--showcase-bg);
+  background-size: 84px 84px, 84px 84px, auto;
+}
+
+.features-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 28%, var(--showcase-sweep-cyan), transparent 24%),
+    radial-gradient(circle at 82% 18%, var(--showcase-sweep-pink), transparent 24%);
+  pointer-events: none;
+}
+
+.features-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.features-section .section-header h2 {
+  color: var(--showcase-title);
+}
+
+.features-section .section-header p {
+  color: var(--showcase-copy);
+}
+
+.features-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.features-indicators {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.features-indicators span {
+  width: 34px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(126, 144, 178, 0.24);
+  transition: width 220ms ease, background 220ms ease;
+}
+
+.features-indicators span.active {
+  width: 42px;
+  background: linear-gradient(90deg, var(--cyan), var(--pink));
+}
+
+.features-stage {
+  display: grid;
+  grid-template-columns: 0.84fr 1.1fr 0.84fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.feature-card {
+  display: grid;
+  gap: 18px;
+  min-height: 340px;
+  padding: 28px;
+  border-radius: 32px;
+  border: 1px solid var(--showcase-card-border);
+  background: var(--showcase-card-bg);
+  box-shadow: var(--shadow-soft);
+  transition: transform 220ms ease, opacity 220ms ease, background 240ms ease;
+}
+
+.feature-card.side {
+  opacity: 0.72;
+  transform: scale(0.96);
+}
+
+.feature-card.active {
+  min-height: 380px;
+  border-color: transparent;
+  background:
+    linear-gradient(var(--showcase-card-bg), var(--showcase-card-bg)) padding-box,
+    var(--border-gradient) border-box;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow);
+}
+
+.feature-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.feature-card-head small {
+  color: var(--showcase-copy);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.feature-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(20, 185, 212, 0.16), rgba(207, 104, 255, 0.18));
+  color: var(--cyan);
+  font-size: 1.28rem;
+  font-weight: 900;
+}
+
+.feature-card h3 {
+  color: var(--showcase-title);
+  font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+  line-height: 1.18;
+}
+
+.feature-card p {
+  color: var(--showcase-copy);
+  font-size: 1rem;
+}
+
+.feature-card-lines {
+  display: grid;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.feature-card-lines span {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(20, 185, 212, 0.18), rgba(207, 104, 255, 0.2));
+}
+
+.feature-card-lines span:nth-child(1) {
+  width: 72%;
+}
+
+.feature-card-lines span:nth-child(2) {
+  width: 88%;
+}
+
+.feature-card-lines span:nth-child(3) {
+  width: 62%;
+}
+
+.features-quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.feature-chip {
+  min-height: 46px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--showcase-card-border);
+  background: var(--showcase-card-bg);
+  color: var(--showcase-copy);
+  font-weight: 700;
+  box-shadow: var(--shadow-soft);
+}
+
+.feature-chip.active {
+  background:
+    linear-gradient(var(--showcase-card-bg), var(--showcase-card-bg)) padding-box,
+    var(--border-gradient) border-box;
+  border: 1px solid transparent;
+  color: var(--showcase-title);
+}
+
+@media (max-width: 1120px) {
+  .features-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card.side {
+    display: none;
+  }
+
+  .feature-card.active {
+    min-height: 320px;
+  }
+}

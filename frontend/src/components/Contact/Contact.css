@@ -1,0 +1,133 @@
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 24px;
+}
+
+.contact-copy,
+.contact-form-card {
+  padding: 34px;
+  border-radius: 32px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-copy {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
+.contact-copy h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.14;
+  letter-spacing: -0.04em;
+}
+
+.contact-copy p {
+  color: var(--text-soft);
+}
+
+.contact-info-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.contact-info-card {
+  display: grid;
+  gap: 4px;
+  padding: 18px 20px;
+  border-radius: 22px;
+  background:
+    linear-gradient(var(--bg-solid), var(--bg-solid)) padding-box,
+    var(--border-gradient) border-box;
+  border: 1px solid transparent;
+}
+
+.contact-info-card span {
+  color: var(--text-soft);
+}
+
+.contact-form-card {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-form-card h3 {
+  font-size: 1.8rem;
+}
+
+.contact-form-card form {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field-control {
+  display: grid;
+  gap: 8px;
+  color: var(--text-soft);
+  font-weight: 700;
+}
+
+.field-control input,
+.field-control select,
+.field-control textarea {
+  width: 100%;
+  min-height: 58px;
+  padding: 0 18px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--bg-solid);
+}
+
+.field-control textarea {
+  min-height: 140px;
+  padding: 16px 18px;
+  resize: vertical;
+}
+
+.contact-message {
+  padding: 16px;
+  border-radius: 16px;
+  font-weight: 700;
+}
+
+.contact-message.success {
+  background: color-mix(in srgb, var(--success) 18%, transparent 82%);
+  color: var(--success);
+}
+
+.contact-message.error {
+  background: color-mix(in srgb, var(--error) 14%, transparent 86%);
+  color: var(--error);
+}
+
+.contact-submit {
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-copy,
+  .contact-form-card {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .contact-field-grid {
+    grid-template-columns: 1fr;
+  }
+}
